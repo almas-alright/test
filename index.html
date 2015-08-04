@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+
+        <script>
+            $(function () {
+                updateIndex();
+                $('li > span.up').on('click', function () {
+                    var dfd = $.Deferred();
+                    dfd.done(moveUp(this), updateIndex());
+                });
+
+                $('li > span.down').on('click', function () {
+                    var dfd = $.Deferred();
+                    dfd.done(moveDown(this), updateIndex());
+                });
+
+            });
+
+            function moveUp(element) {
+                $(element).parent().prev().before($(element).parent());
+            }
+            function moveDown(element) {
+                $(element).parent().next().after($(element).parent());
+            }
+            function updateIndex() {
+                $('li span.down, li span.up').removeClass('off');
+                $('li:last-child > span.down').addClass('off');
+                $('li:first-child > span.up').addClass('off');
+            }
+        </script>
+        <style>
+            .up, .down{ cursor: pointer; }
+            .off{ display: none; }
+            ul.tex{ list-style: none; width: 300px; }
+            ul.tex li { border: 1px solid #46aad5; text-align: center; padding: 1px; line-height: 15px; }
+        </style>
+    </head>
+    <body>
+        <ul class="tex">
+            <li><br><span class="up">↑</span><br>10<br><span class="down">↓</span></li>          
+            <li><br><span class="up">↑</span><br>20<br><span class="down">↓</span></li>          
+            <li><br><span class="up">↑</span><br>30<br><span class="down">↓</span></li>          
+            <li><br><span class="up">↑</span><br>40<br><span class="down">↓</span></li>          
+            <li><br><span class="up">↑</span><br>50<br><span class="down">↓</span></li>          
+
+        </ul>
+
+
+    </body>
+
+</html>

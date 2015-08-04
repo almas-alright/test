@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>403 Forbidden</title>
+        
+        
+        <link rel="stylesheet" href="sty.css" type="text/css">
+</head>
+<body>
+
+<p>Directory access is forbidden.</p>
+
+<label>Name</label>
+<input type="text" value="Valdasd">
+
+
+<input type="radio" name="colors" id="red" checked="true">Red<br>
+  <input type="radio" name="colors" id="blue">Blue
+
+  <div id="sssxxx">
+      
+  </div>
+  <div id="front-homepage-banner">
+      
+      
+        <div class="communication-teaser" id="front-homepage-top-communication" style="opacity: 1;">
+            <div class="front-homepage-top-cta">
+                <h2>
+                    For PR PRos
+                    <span>&amp; marketers</span>
+                </h2>
+                <button class="btn btn-brightblue btn-large" id="teaser_btn">
+                    Find Journalists
+                </button>
+            </div>
+            <div id="front-homepage-top-communication-form">
+                <h3>Start building relationships with journalists</h3>
+                <p>Engage with over 25,000 journalists on the most relevant topics for you, your company, clients and campaigns.</p>
+
+            </div>
+        </div>
+      
+      
+        <div class="journalists-teaser" id="front-homepage-top-journalists" style="opacity: 1;">
+            <div class="front-homepage-top-cta">
+                <h2>
+                    For Journalists
+                    <span>&amp; Bloggers</span>
+                </h2>
+                 <button class="btn btn-brightblue btn-large" id="teaser_btn">
+                    Build free portfolio
+                </button>
+            </div>
+            <div id="front-homepage-top-journalists-form">
+                <h3>You're joining an elite group.</h3>
+                <p>Over 25,000 journalists from The New York Times, The Wall Street Journal, Mashable, Fast Company and hundreds of other publications around the world use Muck Rack to build their portfolio &amp; grow their following.</p>
+
+
+            </div>
+        </div>
+      
+      
+    </div>
+
+
+
+  <script type="text/javascript" src="j/jquery-1.11.2.js"></script>
+  <script type="text/javascript">
+        $(function () {
+            
+     $('#front-homepage-top-communication h2, #front-homepage-top-communication #teaser_btn').on('click mouseover', function() {
+    $('#front-homepage-top-communication').addClass('communication-animation');
+    $('#front-homepage-top-communication').removeClass('communication-teaser');
+    $('#front-homepage-top-journalists').removeClass('journalists-animation');
+    $('#front-homepage-top-journalists').addClass('journalists-teaser');
+    $('#front-homepage-top-journalists').fadeTo('fast', 0.33);
+});
+$('#front-homepage-top-journalists h2, #front-homepage-top-journalists #teaser_btn').on('click mouseover', function() {
+    $('#front-homepage-top-journalists').addClass('journalists-animation');
+    $('#front-homepage-top-journalists').removeClass('journalists-teaser');
+    $('#front-homepage-top-communication').removeClass('communication-animation');
+    $('#front-homepage-top-communication').addClass('communication-teaser');
+    $('#front-homepage-top-communication').fadeTo('fast', 0.33);
+});
+$('#front-homepage-top-communication').on('mouseleave', function() {
+    $('#front-homepage-top-communication').removeClass('communication-animation');
+    $('#front-homepage-top-communication').addClass('communication-teaser');
+    $('#front-homepage-top-journalists').fadeTo('fast', 1);
+});
+$('#front-homepage-top-journalists').on('mouseleave', function() {
+    $('#front-homepage-top-journalists').removeClass('journalists-animation');
+    $('#front-homepage-top-journalists').addClass('journalists-teaser');
+    $('#front-homepage-top-communication').fadeTo('fast', 1);
+});
+        });
+    </script>
+
+</body>
+</html>
